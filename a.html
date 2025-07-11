@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .flex-container{
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+    }
+    .child{
+        border: 2px solid red;
+    }
+    .grid-container{
+        display: grid;
+        /* grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); */
+        grid-template-columns: 1fr 3fr;
+        grid-auto-rows: minmax(100px, auto);
+        gap: 20px;
+    }
+</style>
+<body>
+    <h1>flexbox vs grid</h1>
+    <h2>flexbox</h2>
+    <div class="flex-container">
+        <div class="child">lorem.</div>
+        <div class="child">Lorem ipsum dolor sit amet.</div>
+        <div class="child">Lorem ipsum dolor sit amet consectetur.</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, aspernatur!</div>
+        <div class="child">Lorem ipsum dolor sit.</div>
+        <div class="child">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+        <div class="child">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus sint alias nemo voluptates possimus officia quia, sapiente hic ipsum laboriosam.</div>
+    </div>
+
+    <h2>grid</h2>
+    <div class="grid-container">
+        <div class="child">lorem.</div>
+        <div class="child">Lorem ipsum dolor sit amet.</div>
+        <div class="child">Lorem ipsum dolor sit amet consectetur.</div>
+        <div class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, aspernatur!</div>
+        <div class="child">Lorem ipsum dolor sit.</div>
+        <div class="child">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+        <div class="child">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus sint alias nemo voluptates possimus officia quia, sapiente hic ipsum laboriosam.</div>
+    </div>
+
+</body>
+</html>

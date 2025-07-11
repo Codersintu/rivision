@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="generateTable()" >click</button> -->
+     <button onclick="">click</button>
+     <h1>hey</h1>
+    <script>
+//         function generateTable() {
+
+//   const tbl = document.createElement("table");
+//   const tblBody = document.createElement("tbody");
+
+//   for (let i = 0; i < 4; i++) {
+//     const row = document.createElement("tr");
+
+//     for (let j = 0; j < 4; j++) {
+//       const cell = document.createElement("td");
+//       const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
+//       cell.appendChild(cellText);
+//       row.appendChild(cell);
+//     }
+
+//     tblBody.appendChild(row);
+//   }
+//   tbl.appendChild(tblBody);
+//   document.body.appendChild(tbl);
+//   tbl.setAttribute("border", "2");
+// }
+// document
+//   .querySelector("input[type='button']")
+//   .addEventListener("click", generateTable);
+
+
+// set credential in localstorage
+let mybutton=document.querySelector("button")
+let myheading=document.querySelector("h1")
+function setUsername(){
+  const myname=prompt("enter something...")
+  localStorage.setItem("name",myname)
+  myheading.textContent=`sintu is cool, ${myname}`
+}
+
+if (!localStorage.getItem("name")) {
+  setUsername();
+} else {
+  const storedName = localStorage.getItem("name");
+  myheading.textContent = `Mozilla is cool, ${storedName}`;
+}
+mybutton.addEventListener("click",()=>{
+  setUsername();
+})
+ 
+    </script>
+</body>
+</html>
