@@ -35,6 +35,7 @@
     
     <script>
         const btn=document.querySelector('button')
+        alert(btn.nodeName)
         btn.addEventListener("click",function update(params) {
             const name=prompt('write your name')
             btn.innerText=`hello ${name}`
