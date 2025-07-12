@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* .hero{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    } */
+     div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+     }
+     button{
+        padding: 50px 500px;
+        background-color: chartreuse;
+        
+     }
+</style>
+<body>
+    <!-- <div class="hero">
+        <h2 style="">hey sintu</h2>
+        <p>nc dcnoejoewdkewpdc</p>
+    </div> -->
+    <div class="">
+       <button type="button">hello sintu</button>
+    </div>
+    
+    <script>
+        const btn=document.querySelector('button')
+        btn.addEventListener("click",function update(params) {
+            const name=prompt('write your name')
+            btn.innerText=`hello ${name}`
+        })
+    </script>
+</body>
+</html>
