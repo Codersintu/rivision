@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Silly Story Generator</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    .story {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px dashed #444;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Silly Story Generator</h1>
+
+  <label for="customName">Enter custom name:</label>
+  <input type="text" id="customName" placeholder="Bob">
+
+  <br><br>
+
+  <label><input type="radio" name="region" value="us" checked> US</label>
+  <label><input type="radio" name="region" value="uk"> UK</label>
+
+  <br><br>
+
+  <button id="generate">Generate random story</button>
+
+  <p class="story"></p>
+
+  <script>
+    const customName = document.getElementById('customName');
+const generate = document.getElementById('generate');
+const story = document.querySelector('.story');
+
+const storyText = "It was 94 Fahrenheit outside, so Bob went for a walk. When they got to the park, they stared in horror for a few moments, then Charles jumped in the lake. Bob weighed 300 pounds.";
+
+const insertX = ['Willy the Goblin', 'Big Daddy', 'Father Christmas'];
+const insertY = ['the soup kitchen', 'Disneyland', 'the White House'];
+const insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewalk', 'turned into a slug and crawled away'];
+
+function randomValueFromArray(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+generate.addEventListener('click', () => {
+  let newStory = storyText;
+
+  const xItem = randomValueFromArray(insertX);
+  const yItem = randomValueFromArray(insertY);
+  const zItem = randomValueFromArray(insertZ);
+
+  newStory = newStory.replace('Bob', customName.value !== '' ? customName.value : 'Bob');
+  newStory = newStory.replace('Bob', customName.value !== '' ? customName.value : 'Bob');
+  newStory = newStory.replace('Charles', xItem);
+  newStory = newStory.replace('the park', yItem);
+  newStory = newStory.replace('stared in horror for a few moments, then', zItem);
+
+  // Unit conversion for UK
+  if (document.querySelector('input[value="uk"]').checked) {
+    const weightInStone = Math.round(300 * 0.0714286) + ' stone';
+    const tempInCelsius = Math.round((94 - 32) * 5 / 9) + ' centigrade';
+    newStory = newStory.replace('94 Fahrenheit', tempInCelsius);
+    newStory = newStory.replace('300 pounds', weightInStone);
+  }
+
+  story.textContent = newStory;
+  story.style.visibility = 'visible';
+});
+
+  </script>
+</body>
+</html>
+
+</body>
+</html>
