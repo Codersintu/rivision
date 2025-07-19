@@ -12,7 +12,7 @@
         align-items: center;
         height: 100vh;
     } */
-     div{
+     /* div{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -22,24 +22,40 @@
         padding: 50px 500px;
         background-color: chartreuse;
         
-     }
+     } */
 </style>
 <body>
     <!-- <div class="hero">
         <h2 style="">hey sintu</h2>
         <p>nc dcnoejoewdkewpdc</p>
     </div> -->
-    <div class="">
+    <!-- <div class="">
        <button type="button">hello sintu</button>
-    </div>
+    </div> -->
+
+    <input id="i1" type="number">
+    <input id="i2" type="number">
+    <button onclick="sum()">summ</button>
+    <div id="result">here </div>
     
     <script>
-        const btn=document.querySelector('button')
-        alert(btn.nodeName)
-        btn.addEventListener("click",function update(params) {
-            const name=prompt('write your name')
-            btn.innerText=`hello ${name}`
-        })
+        // const btn=document.querySelector('button')
+        // alert(btn.nodeName)
+        // btn.addEventListener("click",function update(params) {
+        //     const name=prompt('write your name')
+        //     btn.innerText=`hello ${name}`
+        // })
+
+        const sumbtn=document.querySelector('button')
+        const res=document.getElementById("result")
+       const input1=document.getElementById("i1")
+       const input2=document.getElementById("i2")
+        function sum(){
+            let val=Number(input1.value);
+            let val2=Number(input2.value);
+            let final=val+val2
+            res.innerText=`final sum is ${final}`
+        }
     </script>
 </body>
 </html>

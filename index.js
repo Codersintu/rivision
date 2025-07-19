@@ -171,30 +171,57 @@ const app=express()
 //       await next();
 // })
 
-const zod=require("zod")
-const jwt=require("jsonwebtoken")
+// const zod=require("zod")
+// const jwt=require("jsonwebtoken")
 
-//write a function that takes username,password and create jwt token using this credentials add zod library
-const schema = zod.object({
-  email: zod.string().email() , // ✅ correct usage
-  password:zod.string().min(6)
-});
-function Signin(username,password) {
-  const userResponse=schema.safeParse(email)
-  const passwordResponse=passwordSchema.safeParse(password)
+// //write a function that takes username,password and create jwt token using this credentials add zod library
+// const schema = zod.object({
+//   email: zod.string().email() , // ✅ correct usage
+//   password:zod.string().min(6)
+// });
+// function Signin(username,password) {
+//   const userResponse=schema.safeParse(email)
+//   const passwordResponse=passwordSchema.safeParse(password)
 
-  const token=jwt.sign({username},"secret")
-  console.log(token)
-  return token;
+//   const token=jwt.sign({username},"secret")
+//   console.log(token)
+//   return token;
+// }
+// Signin("sintugmailcom","sintu123@")
+
+
+// const port=5000;
+// app.get("/",(req,res)=>{
+//     res.send("hello sintu! just accesed my local express.js server from my mobile using same wifi")
+// })
+
+// app.listen(port,()=>{
+//   console.log(`example app listening on port ${port}`)
+// })
+
+function guess(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].age>18 && arr[i].gender==="male") {
+      console.log('yes hai',arr[i].name)
+    }else{
+      console.log("durr brbak")
+    }
+    
+  }
 }
-Signin("sintugmailcom","sintu123@")
-
-
-const port=5000;
-app.get("/",(req,res)=>{
-    res.send("hello sintu! just accesed my local express.js server from my mobile using same wifi")
-})
-
-app.listen(port,()=>{
-  console.log(`example app listening on port ${port}`)
-})
+const users=[{
+  name:"sintu",
+  age:21,
+  gender:"male"
+},{
+  name:"sakshi",
+  age:21,
+  gender:"female"
+},
+{
+  name:"sinu",
+  age:11,
+  gender:"male"
+}
+]
+guess(users)
